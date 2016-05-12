@@ -1,0 +1,7 @@
+__pycache__
+.idea
+venv
+*.csv
+*.log
+out/*/*.png
+out/*/*.html
