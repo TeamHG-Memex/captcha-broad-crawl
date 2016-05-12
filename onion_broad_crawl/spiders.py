@@ -29,17 +29,13 @@ class Spider(scrapy.Spider):
     def parse(self, response):
         has_captcha = 'captcha' in response.text.lower()
         domain = urlsplit(response.url).netloc
-        filename = '{}.png'.format(domain)
-        screenshot = b64decode(response.data['png'])
-        paths = [os.path.join('out', 'all-screenshots', filename)]
         if has_captcha:
-            paths.append(os.path.join('out', 'captcha-screenshots', filename))
-        for path in paths:
-            with open(path, 'wb') as f:
-                f.write(screenshot)
-        with open(os.path.join(
-                'out', 'html-all', '{}.html'.format(domain)), 'w') as f:
-            f.write(response.text)
+            with open(os.path.join(
+                    'out', 'screenshots', '{}.png'.format(domain)), 'wb') as f:
+                f.write(b64decode(response.data['png']))
+            with open(os.path.join(
+                    'out', 'html', '{}.html'.format(domain)), 'w') as f:
+                f.write(response.text)
         yield items.Item(
             url=response.url,
             has_captcha=has_captcha)
