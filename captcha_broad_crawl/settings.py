@@ -1,5 +1,5 @@
-SPIDER_MODULES = ['onion_broad_crawl.spiders']
-NEWSPIDER_MODULE = 'onion_broad_crawl.spiders'
+SPIDER_MODULES = ['captcha_broad_crawl.spiders']
+NEWSPIDER_MODULE = 'captcha_broad_crawl.spiders'
 
 CONCURRENT_REQUESTS = 32
 CONCURRENT_REQUESTS_PER_DOMAIN = 16
