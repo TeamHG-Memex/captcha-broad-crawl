@@ -9,11 +9,10 @@ and the last is ignored)::
 
 Run spider::
 
-    scrapy crawl spider -s SPLASH_URL=splash_url \
-        -o out/out.csv -s LOG_FILE=out/out.log
+    scrapy crawl spider -s SPLASH_URL=splash_url -o out/out.csv -s LOG_FILE=out/out.log
 
-It will search for captchas (the check is just ``captcha in body.lower()``)
-and save screenshots of them into ``out/screenshots``, and html to
+It will search for captchas (the check is just ``'captcha' in body.lower()``)
+and save screenshots to ``out/screenshots``, and html to
 ``out/html``, writing ``item_id`` into the specified output file
 (you can use this ``item_id`` to match filenames with urls).
 Depth limit is 2 by default, and it crawls no more then 100 pages from each
