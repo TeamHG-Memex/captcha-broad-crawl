@@ -20,3 +20,5 @@ domain, stopping once it has found a captcha.
 
 Adjust concurrency settings according to the splash cluster size, current work
 best for 12 splash processes.
+
+License is MIT.
