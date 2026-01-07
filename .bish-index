@@ -1,0 +1,4 @@
+./captcha_broad_crawl/spiders.py
+./captcha_broad_crawl/settings.py
+./captcha_broad_crawl/__init__.py
+./captcha_broad_crawl/items.py
